@@ -6,481 +6,6 @@
 <title>Topper's Classes – Excellence in Education</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-
-  <!-- * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
-    color: var(--dark);
-    overflow-x: hidden;
-  }
-
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%; height: 72px;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 2px solid var(--orange);
-    box-shadow: 0 2px 20px rgba(245,102,0,0.1);
-  }
-
-  .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-
-  .logo-icon {
-    width: 52px; height: 40px;
-    position: relative;
-  }
-
-  .logo-icon svg { width: 100%; height: 100%; }
-
-  .logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .logo-text .brand { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--orange); letter-spacing: -0.5px; }
-  .logo-text .tagline { font-size: 10px; font-weight: 500; color: var(--blue); letter-spacing: 2px; text-transform: uppercase; }
-
-  nav ul { display: flex; gap: 36px; list-style: none; }
-  nav ul a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--dark); letter-spacing: 0.3px; transition: color 0.2s; position: relative; }
-  nav ul a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.2s; }
-  nav ul a:hover { color: var(--orange); }
-  nav ul a:hover::after { width: 100%; }
-
-  .nav-cta {
-    background: var(--orange); color: white; padding: 10px 24px;
-    border-radius: 6px; font-weight: 600; font-size: 14px;
-    text-decoration: none; letter-spacing: 0.3px;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .nav-cta:hover { background: var(--orange-light); transform: translateY(-1px); }
-
-  /* ─── HERO ─── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1A1A1A 0%, #2D1A00 50%, #1A1A1A 100%);
-    position: relative; overflow: hidden;
-    display: flex; flex-direction: column;
-    padding-top: 72px;
-  }
-
-  .hero-bg-pattern {
-    position: absolute; inset: 0; opacity: 0.04;
-    background-image: repeating-linear-gradient(45deg, #F56600 0, #F56600 1px, transparent 0, transparent 50%);
-    background-size: 30px 30px;
-  }
-
-  .hero-glow {
-    position: absolute; top: -100px; right: -100px;
-    width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(245,102,0,0.25) 0%, transparent 70%);
-    animation: pulse 4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-  }
-
-  .hero-content {
-    position: relative; z-index: 2;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 60px; align-items: center;
-    padding: 80px 5% 60px;
-    flex: 1;
-  }
-
-  .hero-left {}
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(245,102,0,0.15); border: 1px solid rgba(245,102,0,0.4);
-    color: var(--orange-light); padding: 6px 16px; border-radius: 100px;
-    font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-
-  .hero-badge span { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: blink 1.5s infinite; }
-
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 5vw, 72px);
-    font-weight: 900; line-height: 1.05;
-    color: white; margin-bottom: 20px;
-  }
-
-  .hero-title em { font-style: normal; color: var(--orange); }
-
-  .hero-sub {
-    font-size: 17px; color: rgba(255,255,255,0.65);
-    line-height: 1.7; margin-bottom: 36px; max-width: 440px;
-  }
-
-  .hero-stats {
-    display: flex; gap: 40px; margin-bottom: 40px;
-  }
-
-  .stat { text-align: left; }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 46px; color: var(--orange); line-height: 1; }
-  .stat-label { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
-
-  .hero-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--orange); color: white;
-    padding: 16px 36px; border-radius: 8px;
-    font-size: 16px; font-weight: 600; text-decoration: none;
-    transition: all 0.2s;
-  }
-  .hero-btn:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(245,102,0,0.4); }
-
-  /* Toppers grid in hero */
-  .hero-right { display: flex; flex-direction: column; gap: 20px; }
-
-  .class-block {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px; padding: 24px;
-    backdrop-filter: blur(10px);
-  }
-
-  .class-block h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px; color: var(--orange); margin-bottom: 16px;
-    display: flex; align-items: center; gap: 10px;
-  }
-
-  .class-block h3 span {
-    background: var(--orange); color: white;
-    font-size: 11px; font-weight: 700; letter-spacing: 1px;
-    padding: 3px 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif;
-  }
-
-  .toppers-row { display: flex; gap: 16px; flex-wrap: wrap; }
-
-  .topper-card {
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 20px;
-    flex: 1; min-width: 110px;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: transform 0.2s;
-  }
-
-  .topper-card:hover { transform: translateY(-3px); }
-  .topper-card.gold { border-color: rgba(245,102,0,0.5); background: rgba(245,102,0,0.1); }
-
-  .topper-avatar {
-    width: 54px; height: 54px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
-    color: white; position: relative; overflow: hidden;
-  }
-
-  .topper-avatar.blue { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%); }
-  .topper-avatar.orange { background: linear-gradient(135deg, var(--orange) 0%, #FF6B00 100%); }
-  .topper-avatar.teal { background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%); }
-  .topper-avatar.purple { background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); }
-  .topper-avatar.green { background: linear-gradient(135deg, #059669 0%, #10B981 100%); }
-
-  .rank-badge {
-    position: absolute; top: -2px; right: -2px;
-    width: 20px; height: 20px; border-radius: 50%;
-    background: var(--orange); display: flex; align-items: center; justify-content: center;
-    font-size: 9px; font-weight: 700; color: white; border: 2px solid #1A1A1A;
-  }
-
-  .topper-name { font-size: 13px; font-weight: 600; color: white; text-align: center; }
-  .topper-score { font-size: 18px; font-weight: 700; color: var(--orange-light); }
-  .topper-sub { font-size: 11px; color: rgba(255,255,255,0.4); }
-
-  /* ─── YEAR SPAN STRIP ─── */
-  .year-strip {
-    background: var(--orange);
-    padding: 0; position: relative;
-    overflow: hidden;
-  }
-
-  .year-tabs {
-    display: flex; align-items: stretch;
-    max-width: 100%; overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .year-tabs::-webkit-scrollbar { display: none; }
-
-  .year-tab {
-    flex-shrink: 0; padding: 16px 32px;
-    font-size: 15px; font-weight: 700; letter-spacing: 0.5px;
-    color: rgba(255,255,255,0.7); cursor: pointer;
-    border: none; background: none;
-    border-right: 1px solid rgba(255,255,255,0.2);
-    transition: all 0.2s; position: relative; font-family: 'DM Sans', sans-serif;
-  }
-
-  .year-tab::after {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-    height: 3px; background: white; transform: scaleX(0); transition: transform 0.2s;
-  }
-
-  .year-tab:hover { color: white; background: rgba(0,0,0,0.1); }
-  .year-tab.active { color: white; background: rgba(0,0,0,0.15); }
-  .year-tab.active::after { transform: scaleX(1); }
-
-  /* ─── RESULTS SECTION ─── */
-  .results-section {
-    padding: 60px 5%;
-    background: var(--off-white);
-  }
-
-  .results-panel { display: none; }
-  .results-panel.active { display: block; animation: fadeIn 0.4s ease; }
-
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-  .section-label {
-    display: inline-block;
-    font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--orange); margin-bottom: 8px;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 48px); font-weight: 900;
-    color: var(--dark); line-height: 1.1; margin-bottom: 40px;
-  }
-
-  .results-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-
-  .result-card {
-    background: white; border-radius: 14px; padding: 24px;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    border-top: 4px solid var(--orange);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .result-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-
-  .result-card .avatar {
-    width: 60px; height: 60px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px; font-weight: 700; color: white;
-  }
-
-  .result-card .r-name { font-weight: 700; font-size: 15px; text-align: center; }
-  .result-card .r-pct { font-size: 28px; font-weight: 900; color: var(--orange); }
-  .result-card .r-class { font-size: 12px; color: var(--gray); }
-
-  /* ─── TEACHERS ─── */
-  .teachers-section {
-    padding: 80px 5%;
-    background: white;
-  }
-
-  .teachers-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 28px; margin-top: 48px;
-  }
-
-  .teacher-card {
-    text-align: center; padding: 32px 24px;
-    background: white; border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    transition: all 0.3s; position: relative; overflow: hidden;
-    border: 2px solid transparent;
-  }
-
-  .teacher-card::before {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-    height: 4px; background: var(--orange); transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-
-  .teacher-card:hover { transform: translateY(-6px); border-color: var(--orange-pale); box-shadow: 0 16px 40px rgba(245,102,0,0.12); }
-  .teacher-card:hover::before { transform: scaleX(1); }
-
-  .teacher-avatar {
-    width: 90px; height: 90px; border-radius: 50%;
-    margin: 0 auto 16px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 36px; font-weight: 700; color: white;
-    border: 4px solid var(--orange-pale);
-  }
-
-  .teacher-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin-bottom: 4px; }
-  .teacher-subject { font-size: 13px; color: var(--orange); font-weight: 600; margin-bottom: 6px; letter-spacing: 0.3px; }
-  .teacher-exp { font-size: 12px; color: var(--gray); }
-
-  /* ─── CONTACT ─── */
-  .contact-section {
-    padding: 80px 5%;
-    background: linear-gradient(135deg, var(--dark) 0%, #2D1A00 100%);
-    position: relative; overflow: hidden;
-  }
-
-  .contact-section::before {
-    content: ''; position: absolute; inset: 0; opacity: 0.03;
-    background-image: repeating-linear-gradient(45deg, #F56600 0, #F56600 1px, transparent 0, transparent 40px);
-    background-size: 40px 40px;
-  }
-
-  .contact-inner { position: relative; z-index: 1; }
-  .contact-inner .section-title { color: white; }
-  .contact-inner .section-label { color: var(--orange-light); }
-
-  .contact-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 60px; align-items: start;
-  }
-
-  .contact-info { display: flex; flex-direction: column; gap: 24px; }
-
-  .contact-item {
-    display: flex; align-items: flex-start; gap: 16px;
-    color: rgba(255,255,255,0.8);
-  }
-
-  .contact-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: rgba(245,102,0,0.2); border: 1px solid rgba(245,102,0,0.3);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-
-  .contact-item strong { display: block; color: white; font-size: 14px; margin-bottom: 2px; }
-  .contact-item span { font-size: 14px; line-height: 1.5; }
-
-  .contact-form { display: flex; flex-direction: column; gap: 16px; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
-
-  .form-group input, .form-group select, .form-group textarea {
-    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
-    color: white; padding: 12px 16px; border-radius: 8px;
-    font-size: 14px; font-family: 'DM Sans', sans-serif;
-    outline: none; transition: border-color 0.2s;
-    resize: none;
-  }
-
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); }
-  .form-group select option { background: #1A1A1A; }
-
-  .submit-btn {
-    background: var(--orange); color: white; border: none;
-    padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 700;
-    cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
-    letter-spacing: 0.3px;
-  }
-
-  .submit-btn:hover { background: var(--orange-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,102,0,0.3); }
-
-  /* ─── PARTNERS ─── */
-  .partners-section {
-    padding: 60px 5%; background: var(--gray-light);
-    text-align: center;
-  }
-
-  .partners-title {
-    font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gray); margin-bottom: 36px;
-  }
-
-  .partners-row {
-    display: flex; align-items: center; justify-content: center;
-    gap: 40px; flex-wrap: wrap;
-  }
-
-  .partner-pill {
-    display: flex; align-items: center; gap: 10px;
-    background: white; border-radius: 100px; padding: 12px 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    font-weight: 600; font-size: 15px; color: var(--dark);
-    transition: box-shadow 0.2s;
-  }
-
-  .partner-pill:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-  .partner-logo { font-size: 20px; }
-
-  /* ─── MD SECTION ─── */
-  .md-section {
-    padding: 80px 5%;
-    background: var(--off-white);
-    display: flex; align-items: center; gap: 80px;
-    justify-content: center;
-  }
-
-  .md-photo-wrap {
-    flex-shrink: 0; position: relative;
-  }
-
-  .md-photo {
-    width: 220px; height: 280px; border-radius: 20px;
-    background: linear-gradient(135deg, var(--orange) 0%, #CC5500 100%);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 80px; color: white;
-    box-shadow: 0 20px 60px rgba(245,102,0,0.25);
-    position: relative; overflow: hidden;
-  }
-
-  .md-photo::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%);
-  }
-
-  .md-photo-label {
-    position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--orange); color: white; padding: 6px 20px; border-radius: 100px;
-    font-size: 12px; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap;
-  }
-
-  .md-content { max-width: 540px; }
-
-  .md-content .section-label { margin-bottom: 12px; }
-
-  .md-name {
-    font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px);
-    font-weight: 900; color: var(--dark); line-height: 1.15; margin-bottom: 16px;
-  }
-
-  .md-message {
-    font-size: 16px; line-height: 1.8; color: var(--gray);
-    font-style: italic; position: relative; padding-left: 24px;
-    border-left: 3px solid var(--orange); margin-bottom: 24px;
-  }
-
-  .md-sign {
-    display: inline-flex; flex-direction: column;
-  }
-
-  .md-sign .sig { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--orange); font-style: italic; }
-  .md-sign .sig-role { font-size: 13px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--dark); color: rgba(255,255,255,0.5);
-    text-align: center; padding: 24px 5%;
-    font-size: 13px;
-    border-top: 3px solid var(--orange);
-  }
-
-  footer strong { color: var(--orange-light); }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 900px) {
-    nav ul, .nav-cta { display: none; }
-    .hero-content { grid-template-columns: 1fr; padding: 40px 5%; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .md-section { flex-direction: column; text-align: center; gap: 48px; }
-    .md-message { text-align: left; } -->
 </head>
 <body>
 
@@ -537,7 +62,7 @@
         Where <em>Toppers</em><br>are Made,<br>Not Born.
       </h1>
       <p class="hero-sub">
-        Rajasthan's most trusted coaching institute for Class 10th & 12th. Expert faculty, proven methodology, and a legacy of extraordinary results.
+        Bijnor's most trusted coaching institute for Class 10th & 12th. Expert faculty, proven methodology, and a legacy of extraordinary results.
       </p>
       <div class="hero-stats">
         <div class="stat">
@@ -545,11 +70,11 @@
           <div class="stat-label">Pass Rate</div>
         </div>
         <div class="stat">
-          <div class="stat-num">24+</div>
+          <div class="stat-num">12+</div>
           <div class="stat-label">Years Legacy</div>
         </div>
         <div class="stat">
-          <div class="stat-num">3K+</div>
+          <div class="stat-num">100+</div>
           <div class="stat-label">Toppers</div>
         </div>
       </div>
@@ -565,30 +90,39 @@
         <div class="toppers-row">
           <div class="topper-card gold">
             <div class="topper-avatar orange" style="position:relative">
-              AR
+              
               <div class="rank-badge">1</div>
             </div>
-            <div class="topper-name">Aarav Rajput</div>
-            <div class="topper-score">99.2%</div>
-            <div class="topper-sub">Dist. Topper</div>
+            <div class="topper-name">Aryan</div>
+            <div class="topper-score">92.6%</div>
+            <!-- <div class="topper-sub">Dist. Topper</div> -->
           </div>
           <div class="topper-card">
             <div class="topper-avatar blue" style="position:relative">
-              PG
+              
               <div class="rank-badge">2</div>
             </div>
-            <div class="topper-name">Priya Gupta</div>
-            <div class="topper-score">98.8%</div>
-            <div class="topper-sub">State Rank 4</div>
+            <div class="topper-name">Akshraj Singh</div>
+            <div class="topper-score">91.2%</div>
+            <!-- <div class="topper-sub">State Rank 4</div> -->
           </div>
           <div class="topper-card">
             <div class="topper-avatar teal" style="position:relative">
-              RS
+              
               <div class="rank-badge">3</div>
             </div>
-            <div class="topper-name">Rohan Sharma</div>
-            <div class="topper-score">98.4%</div>
-            <div class="topper-sub">State Rank 8</div>
+            <div class="topper-name">Abhay</div>
+            <div class="topper-score">85.2%</div>
+            <!-- <div class="topper-sub">State Rank 8</div> -->
+          </div>
+          <div class="topper-card">
+            <div class="topper-avatar teal" style="position:relative">
+              
+              <div class="rank-badge">4</div>
+            </div>
+            <div class="topper-name">Mahi</div>
+            <div class="topper-score">81.2%</div>
+            <!-- <div class="topper-sub">State Rank 8</div> -->
           </div>
         </div>
       </div>
@@ -740,34 +274,34 @@
     <div class="teacher-card">
       <div class="teacher-avatar" style="background:linear-gradient(135deg,#F56600,#CC5500)">SC</div>
       <div class="teacher-name">Sandeep Chaudhary</div>
-      <div class="teacher-subject">Mathematics & Director</div>
-      <div class="teacher-exp">25+ Years Experience · M.Sc. Math, BHU</div>
+      <div class="teacher-subject">Managing Director</div>
+      <div class="teacher-exp">20+ Years Experience</div>
     </div>
     <div class="teacher-card">
       <div class="teacher-avatar" style="background:linear-gradient(135deg,#1A4FAA,#2563EB)">RB</div>
-      <div class="teacher-name">Dr. Rakesh Bhatnagar</div>
+      <div class="teacher-name">Akash Rana</div>
       <div class="teacher-subject">Physics</div>
-      <div class="teacher-exp">18 Years Experience · Ph.D. IIT Kanpur</div>
+      <div class="teacher-exp">12 Years Experience · Ph.D. IIT Kanpur</div>
     </div>
     <div class="teacher-card">
       <div class="teacher-avatar" style="background:linear-gradient(135deg,#059669,#10B981)">PD</div>
-      <div class="teacher-name">Preethi Dubey</div>
+      <div class="teacher-name">Mohit Kumar</div>
       <div class="teacher-subject">Chemistry</div>
       <div class="teacher-exp">14 Years Experience · M.Sc. Chemistry</div>
     </div>
     <div class="teacher-card">
       <div class="teacher-avatar" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">SJ</div>
-      <div class="teacher-name">Sanjay Jain</div>
+      <div class="teacher-name">Akash Rana</div>
       <div class="teacher-subject">Biology & Science</div>
-      <div class="teacher-exp">16 Years Experience · M.Sc. Zoology</div>
+      <div class="teacher-exp">16 Years Experience · M.Sc. Biology</div>
     </div>
     <div class="teacher-card">
       <div class="teacher-avatar" style="background:linear-gradient(135deg,#0D9488,#14B8A6)">AM</div>
-      <div class="teacher-name">Ananya Mishra</div>
+      <div class="teacher-name">Mohit Kumar bharti</div>
       <div class="teacher-subject">English Language</div>
       <div class="teacher-exp">12 Years Experience · M.A. English</div>
     </div>
-    <div class="teacher-card">
+    <!-- <div class="teacher-card">
       <div class="teacher-avatar" style="background:linear-gradient(135deg,#DC2626,#F87171)">VK</div>
       <div class="teacher-name">Vijay Kumar</div>
       <div class="teacher-subject">Social Science</div>
@@ -784,7 +318,7 @@
       <div class="teacher-name">Gaurav Trivedi</div>
       <div class="teacher-subject">Hindi & Sanskrit</div>
       <div class="teacher-exp">15 Years Experience · M.A. Hindi</div>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -800,28 +334,28 @@
           <div class="contact-icon">📍</div>
           <div>
             <strong>Address</strong>
-            <span>Near Civil Lines, Opposite District Court,<br>Ajmer, Rajasthan – 305001</span>
+            <span>Opposite Kalyani Hospital, Kiratpur<br>Bijnor, Uttar Pradesh, 246731</span>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">📞</div>
           <div>
             <strong>Phone</strong>
-            <span>+91 98765 43210 &nbsp;|&nbsp; +91 88888 00123</span>
+            <span>+91 97580 66077 &nbsp;|&nbsp; +91 85297 78953</span>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">✉️</div>
           <div>
             <strong>Email</strong>
-            <span>info@toppersclasses.in</span>
+            <span>toppersclasses@gmail.in</span>
           </div>
         </div>
         <div class="contact-item">
           <div class="contact-icon">🕐</div>
           <div>
             <strong>Timings</strong>
-            <span>Mon – Sat: 7:00 AM – 8:00 PM<br>Sunday: 9:00 AM – 1:00 PM</span>
+            <span>Mon – Sat: 7:00 AM – 8:00 PM<br>Sunday: 9:00 AM – 5:00 PM</span>
           </div>
         </div>
       </div>
@@ -871,12 +405,12 @@
 <section class="partners-section" id="partners">
   <div class="partners-title">Trusted & Reliable Partners</div>
   <div class="partners-row">
-    <div class="partner-pill"><span class="partner-logo">📚</span> Oswaal Books</div>
-    <div class="partner-pill"><span class="partner-logo">🎓</span> CBSE Board</div>
-    <div class="partner-pill"><span class="partner-logo">💡</span> Doubtnut</div>
-    <div class="partner-pill"><span class="partner-logo">🖥</span> BYJU'S for Schools</div>
-    <div class="partner-pill"><span class="partner-logo">🏆</span> SOF Olympiad</div>
-    <div class="partner-pill"><span class="partner-logo">📝</span> S. Chand Publishing</div>
+    <div class="partner-pill"><span class="partner-logo">📚</span> S. M. Academy</div>
+    <div class="partner-pill"><span class="partner-logo">🎓</span> Greenfield Public School</div>
+    <div class="partner-pill"><span class="partner-logo">💡</span> Bijnor Public School</div>
+    <div class="partner-pill"><span class="partner-logo">🖥</span> TeachNext</div>
+    <!-- <div class="partner-pill"><span class="partner-logo">🏆</span> SOF Olympiad</div>
+    <div class="partner-pill"><span class="partner-logo">📝</span> S. Chand Publishing</div> -->
   </div>
 </section>
 
@@ -908,14 +442,14 @@
     </p>
     <div class="md-sign">
       <span class="sig">Sandeep Chaudhary</span>
-      <span class="sig-role">Managing Director, Topper's Classes · Est. 2001</span>
+      <span class="sig-role">Managing Director, Topper's Classes · Est. 2013</span>
     </div>
   </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <p>© 2025 <strong>Topper's Classes</strong> · All Rights Reserved · Ajmer, Rajasthan · Founded by <strong>Sandeep Chaudhary</strong></p>
+  <p>© 2026 <strong>Topper's Classes</strong> · All Rights Reserved · Bijnor, Uttar Pradesh · Founded by <strong>Sandeep Chaudhary</strong></p>
 </footer>
 
 <script src="script.js"></script>

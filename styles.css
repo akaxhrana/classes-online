@@ -95,7 +95,7 @@
     flex: 1;
   }
 
-  .hero-left {}
+  /* .hero-left {} */
 
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
@@ -188,6 +188,21 @@
   .topper-avatar.purple { background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); }
   .topper-avatar.green { background: linear-gradient(135deg, #059669 0%, #10B981 100%); }
 
+  .topper-avatar .student-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .topper-avatar.photo-fallback::after {
+    content: attr(data-initials);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+  }
+
   .rank-badge {
     position: absolute; top: -2px; right: -2px;
     width: 20px; height: 20px; border-radius: 50%;
@@ -274,6 +289,21 @@
     width: 60px; height: 60px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 24px; font-weight: 700; color: white;
+    overflow: hidden;
+  }
+
+  .result-card .avatar .student-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .result-card .avatar.photo-fallback::after {
+    content: attr(data-initials);
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
   }
 
   .result-card .r-name { font-weight: 700; font-size: 15px; text-align: center; }
